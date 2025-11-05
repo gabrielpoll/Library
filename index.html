@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
+    <header>
+        <p class="library-title-header">The Odin Library</p>
+        <button id="new-button">New Book</button>
+        <button id="remove-all">Remove All</button>
+    </header>
+    
+    <main class="main">
+        <article class="card">
+            <div>
+                <p class="title-text">title</p>
+            </div>
+            <div>
+                <p class="author">author</p>
+                <p class="pages">pages</p>
+            </div>
+            <div>
+                <span>Read</span> <input type="checkbox">
+            </div>
+            <div>
+                <button id="remove-button">Remove</button>
+            </div>
+        </article>
+    </main>
 
+    <footer>
+        <p class="footer-text">© Gabriel Poll | 2025</p>
+    </footer>
 
+<script src="script.js"></script>
 </body>
 
 </html>
