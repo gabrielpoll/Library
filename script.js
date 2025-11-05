@@ -1,4 +1,15 @@
 let mainContainer = document.querySelector('.main')
+let newBookButton = document.getElementById('new-book')
+let modalForm = document.querySelector('.modal')
+let CancelBookForm = document.querySelector('.cancel-book-form')
+
+newBookButton.addEventListener('click', function(e) {
+    modalForm.style.display = 'block';
+});
+
+CancelBookForm.addEventListener('click', function(e) {
+    modalForm.style.display = 'none';
+});
 
 const myLibrary = [];
 

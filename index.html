@@ -9,8 +9,40 @@
 <body>
     <header>
         <p class="library-title-header">The Odin Library</p>
-        <button id="new-button">New Book</button>
+        <button id="new-book">New Book</button>
         <button id="remove-all">Remove All</button>
+
+        <div class="modal">
+            <form action="#">
+                <div>
+                    <label for="book-title">Book title:</label>
+                    <input type="text" name="book-title" id="book-title" required>
+                </div>
+                <div>
+                    <label for="book-author">Author:</label>
+                    <input type="text" name="book-author" id="book-author" required>
+                </div>
+
+                <div>
+                    <label for="book-pages">Number of Pages:</label>
+                    <input type="number" name="book-pages" id="book-pages" required>
+                </div>
+
+                <div>
+                    <label for="book-read">Read</label>
+                    <input type="checkbox" name="book-read" id="book-read">
+                </div>
+
+                <div>
+                    <input type="submit" value="Add book">
+                </div>
+
+                <div>
+                    <button type="button" class="cancel-book-form">Cancel</button>
+                </div>
+
+            </form>
+        </div>
     </header>
     
     <main class="main">
