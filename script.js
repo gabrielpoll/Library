@@ -3,6 +3,8 @@ let cardTemplate = document.querySelector(".card").cloneNode(true);
 let newBookButton = document.getElementById('new-book')
 let modalForm = document.querySelector('.modal')
 let CancelBookForm = document.querySelector('.cancel-book-form')
+let removeButtonBook = document.getElementById('remove-button');
+
 
 document.querySelector('.card').style.display = 'none';
 
@@ -55,6 +57,7 @@ function loopThroughArray() {
         card.querySelector(".title-text").textContent = myLibrary[index].title;
         card.querySelector(".author").textContent = myLibrary[index].author;
         card.querySelector(".pages").textContent = myLibrary[index].pages;
+        card.querySelector(".book-id").textContent = myLibrary[index].id;
         if (myLibrary[index].read === true) {
             card.querySelector('.read-checkbox').checked = true; 
         };
