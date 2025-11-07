@@ -1,7 +1,11 @@
 let mainContainer = document.querySelector('.main')
+let cardTemplate = document.querySelector(".card").cloneNode(true);
 let newBookButton = document.getElementById('new-book')
 let modalForm = document.querySelector('.modal')
 let CancelBookForm = document.querySelector('.cancel-book-form')
+
+document.querySelector('.card').style.display = 'none';
+
 
 newBookButton.addEventListener('click', function(e) {
     modalForm.style.display = 'block';
@@ -39,14 +43,15 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     let bookID = newBook.id;
-    newBook['ID'] = bookID;
+    newBook['id'] = bookID;
     myLibrary.push(newBook);
-
 };
 
 function loopThroughArray() {
+    
+    mainContainer.innerHTML = '';
     for(let index = 0; index < myLibrary.length; index++) {
-        let card = document.querySelector(".card").cloneNode(true);
+        let card = cardTemplate.cloneNode(true);
         card.querySelector(".title-text").textContent = myLibrary[index].title;
         card.querySelector(".author").textContent = myLibrary[index].author;
         card.querySelector(".pages").textContent = myLibrary[index].pages;
