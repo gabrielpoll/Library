@@ -11,6 +11,18 @@ CancelBookForm.addEventListener('click', function(e) {
     modalForm.style.display = 'none';
 });
 
+modalForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const title = document.getElementById('book-title').value;
+    const author = document.getElementById('book-author').value;
+    const pages = document.getElementById('book-pages').value;
+    const read = document.getElementById('book-read').checked;
+
+    addBookToLibrary(title, author, pages, read);
+    loopThroughArray();
+});
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -26,6 +38,8 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
+    let bookID = newBook.id;
+    newBook['ID'] = bookID;
     myLibrary.push(newBook);
 
 };
@@ -36,14 +50,14 @@ function loopThroughArray() {
         card.querySelector(".title-text").textContent = myLibrary[index].title;
         card.querySelector(".author").textContent = myLibrary[index].author;
         card.querySelector(".pages").textContent = myLibrary[index].pages;
+        if (myLibrary[index].read === true) {
+            card.querySelector('.read-checkbox').checked = true; 
+        };
 
         mainContainer.appendChild(card);
     };
 };
 
-addBookToLibrary("The hobbit", "J.R.R", 295, "read");
-
-loopThroughArray();
 
 
 
