@@ -18,7 +18,8 @@ header {
     align-items: center;
 }
 
-.modal {
+.modal,
+.book-id {
     display: none;
 }
 

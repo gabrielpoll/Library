@@ -49,6 +49,10 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 };
 
+function removeBookFromDisplay() {
+    
+};
+
 function loopThroughArray() {
     
     mainContainer.innerHTML = '';
